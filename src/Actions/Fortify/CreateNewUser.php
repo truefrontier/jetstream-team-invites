@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Events\TeamMemberAdded;
 use Laravel\Jetstream\Events\AddingTeamMember;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Truefrontier\TeamInvites\Models\Invitation;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 
 class CreateNewUser implements CreatesNewUsers
 {

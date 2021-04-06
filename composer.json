@@ -1,12 +1,12 @@
 {
-  "name": "truefrontier/team-invites",
+  "name": "truefrontier/jetstream-team-invites",
   "description": "Customize Jetstream Team Invitations",
   "keywords": [
     "truefrontier",
     "jetstream",
     "team-invites"
   ],
-  "homepage": "https://github.com/truefrontier/team-invites",
+  "homepage": "https://github.com/truefrontier/jetstream-team-invites",
   "license": "MIT",
   "type": "library",
   "authors": [
@@ -48,10 +48,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Truefrontier\\TeamInvites\\TeamInvitesServiceProvider"
+        "Truefrontier\\JetstreamTeamInvites\\JetstreamTeamInvitesServiceProvider"
       ],
       "aliases": {
-        "TeamInvites": "Truefrontier\\TeamInvites\\TeamInvitesFacade"
+        "TeamInvites": "Truefrontier\\JetstreamTeamInvites\\JetstreamTeamInvitesFacade"
       }
     }
   }

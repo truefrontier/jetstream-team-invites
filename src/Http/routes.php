@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Truefrontier\TeamInvites\Http\Controllers\TeamInvitesController;
+use Truefrontier\JetstreamTeamInvites\Http\Controllers\JetstreamTeamInvitesController;
 
-Route::get('/team-invitations/{invitation}', [TeamInvitesController::class, 'accept'])
+Route::get('/team-invitations/{invitation}', [JetstreamTeamInvitesController::class, 'accept'])
 	->middleware(['signed'])
 	->name('team-invitations.accept');
 
-Route::delete('/team-invitations/{invitation}', [TeamInvitesController::class, 'destroy'])->name('team-invitations.destroy');
+Route::delete('/team-invitations/{invitation}', [JetstreamTeamInvitesController::class, 'destroy'])->name('team-invitations.destroy');

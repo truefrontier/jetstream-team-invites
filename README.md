@@ -1,6 +1,6 @@
-# Laravel Jetstream - Custom Team Invites
+# Custom Laravel Jetstream Team Invites
 
-## Installation
+## Prerequisites
 
 This package assumes you have already installed Jetstream and your `Team` and `User` Models are in the `app/Models` 
 directory and namespace.
@@ -11,7 +11,7 @@ Install this package via Composer by adding the package and the repository link:
 
 ```composer
 "require": {
-  "truefrontier/team-invites": "dev-main",
+  "truefrontier/jetstream-team-invites": "dev-main",
 },
 
 // ...
@@ -19,7 +19,7 @@ Install this package via Composer by adding the package and the repository link:
 "repositories": [
   {
     "type":"vcs",
-    "url": "https://github.com/truefrontier/team-invites"
+    "url": "https://github.com/truefrontier/jetstream-team-invites"
   }
 ],
 ```
@@ -31,16 +31,16 @@ composer update
 
 Publish the config options:
 ```bash
-php artisan vendor:publish --provider="Truefrontier\TeamInvites\TeamInvitesServiceProvider" --force
+php artisan vendor:publish --provider="Truefrontier\JetstreamTeamInvites\JetstreamTeamInvitesServiceProvider" --force
 ```
 
 Lastly, add the Invitation Trait to your Team and User Model:
 ```php
-use Truefrontier\TeamInvites\Traits\HasTeamInvites;
+use Truefrontier\JetstreamTeamInvites\Traits\HasJetstreamTeamInvites;
 
 class User
 {
-    use HasTeamInvites;
+    use HasJetstreamTeamInvites;
 ```
 
 ## License

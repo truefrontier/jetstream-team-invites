@@ -1,16 +1,16 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Http\Controllers;
+namespace Truefrontier\JetstreamTeamInvites\Http\Controllers;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
-use Truefrontier\TeamInvites\Models\Invitation;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Illuminate\Auth\Access\AuthorizationException;
 
-class TeamInvitesController extends Controller
+class JetstreamTeamInvitesController extends Controller
 {
 
 	/**

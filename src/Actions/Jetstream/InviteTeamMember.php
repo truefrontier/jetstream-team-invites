@@ -8,7 +8,7 @@ use Laravel\Jetstream\Rules\Role;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use Truefrontier\TeamInvites\Models\Invitation;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 use Laravel\Jetstream\Events\InvitingTeamMember;
 use Laravel\Jetstream\Contracts\InvitesTeamMembers;
 
@@ -38,7 +38,7 @@ class InviteTeamMember implements InvitesTeamMembers
 			'email' => $email,
 		]);
 
-		Mail::to($email)->send(new \Truefrontier\TeamInvites\Mail\InviteTeamMember($invitation));
+		Mail::to($email)->send(new \Truefrontier\JetstreamTeamInvites\Mail\InviteTeamMember($invitation));
 	}
 
 	/**

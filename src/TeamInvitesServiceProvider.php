@@ -1,15 +1,15 @@
 <?php
 
-namespace Truefrontier\TeamInvites;
+namespace Truefrontier\JetstreamTeamInvites;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class TeamInvitesServiceProvider
- * @package Truefrontier\TeamInvites
+ * Class JetstreamTeamInvitesServiceProvider
+ * @package Truefrontier\JetstreamTeamInvites
  */
-class TeamInvitesServiceProvider extends ServiceProvider
+class JetstreamTeamInvitesServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -41,7 +41,7 @@ class TeamInvitesServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
-            'namespace' => 'Truefrontier\TeamInvites\Http\Controllers',
+            'namespace' => 'Truefrontier\JetstreamTeamInvites\Http\Controllers',
         ];
     }
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Traits;
+namespace Truefrontier\JetstreamTeamInvites\Traits;
 
-use Truefrontier\TeamInvites\Models\Invitation;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 
 /**
- * Trait HasTeamInvites
- * @package Truefrontier\TeamInvites\Traits
+ * Trait HasJetstreamTeamInvites
+ * @package Truefrontier\JetstreamTeamInvites\Traits
  */
-trait HasTeamInvites {
+trait HasJetstreamTeamInvites {
 
 	/**
 	 * @return mixed

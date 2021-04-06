@@ -1,11 +1,11 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Mail;
+namespace Truefrontier\JetstreamTeamInvites\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Truefrontier\TeamInvites\Models\Invitation;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class InviteTeamMember extends Mailable

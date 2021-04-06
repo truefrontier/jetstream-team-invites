@@ -1,14 +1,14 @@
 <?php
 
-namespace Truefrontier\TeamInvites;
+namespace Truefrontier\JetstreamTeamInvites;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class TeamInvitesFacade
- * @package Truefrontier\TeamInvites
+ * Class JetstreamTeamInvitesFacade
+ * @package Truefrontier\JetstreamTeamInvites
  */
-class TeamInvitesFacade extends Facade
+class JetstreamTeamInvitesFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -17,6 +17,6 @@ class TeamInvitesFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'teamInvites';
+        return 'jetstreamTeamInvites';
     }
 }

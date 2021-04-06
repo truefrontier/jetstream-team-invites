@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Models;
+namespace Truefrontier\JetstreamTeamInvites\Models;
 
 use App\Models\User;
 use App\Models\Team;
