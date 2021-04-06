@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Database\Factories;
+namespace Database\Factories;
 
 use App\Models\User;
 use App\Models\Team;

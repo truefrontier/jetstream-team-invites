@@ -2,8 +2,6 @@
 
 namespace App\Actions\Jetstream;
 
-use App\Models\User;
-use App\Models\Team;
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\Rules\Role;
 use Illuminate\Support\Facades\Gate;
