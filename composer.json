@@ -31,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Truefrontier\\TeamInvites\\": "src"
+      "Truefrontier\\JetstreamTeamInvites\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Truefrontier\\TeamInvites\\Tests\\": "tests"
+      "Truefrontier\\JetstreamTeamInvites\\Tests\\": "tests"
     }
   },
   "scripts": {
