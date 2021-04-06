@@ -7,19 +7,21 @@ directory and namespace.
 
 ## Installation
 
-Install this package via Composer by added the package and the repository link:
+Install this package via Composer by adding the package and the repository link:
 
 ```composer
 "require": {
   "truefrontier/team-invites": "dev-main",
-}
+},
+
+// ...
 
 "repositories": [
   {
     "type":"vcs",
     "url": "https://github.com/truefrontier/team-invites"
   }
-]
+],
 ```
 
 Then run:
