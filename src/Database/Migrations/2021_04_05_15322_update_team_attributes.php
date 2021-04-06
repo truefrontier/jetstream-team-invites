@@ -16,7 +16,7 @@ class UpdateTeamAttributes extends Migration
 		Schema::table('teams', function (Blueprint $table) {
 			$table->string('logo')->nullable();
 			$table->string('subdomain')->nullable()->unique();
-			$table->json('config')->nullable();
+			$table->schemalessAttributes('config');
 		});
 	}
 
