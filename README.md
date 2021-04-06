@@ -20,7 +20,7 @@ Install this package via Composer:
 
 Publish the config options:
 ```bash
-php artisan vendor:publish --provider="Truefrontier\TeamInvites\TeamInvitesServiceProvider"
+php artisan vendor:publish --provider="Truefrontier\TeamInvites\TeamInvitesServiceProvider" --force
 ```
 
 ## License
