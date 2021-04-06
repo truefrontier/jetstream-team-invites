@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Actions\Jetstream;
+namespace App\Actions\Jetstream;
 
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\Rules\Role;

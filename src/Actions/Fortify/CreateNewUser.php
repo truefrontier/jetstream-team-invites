@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Actions\Fortify;
+namespace App\Actions\Fortify;
 
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\DB;

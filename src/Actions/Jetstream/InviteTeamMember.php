@@ -1,6 +1,6 @@
 <?php
 
-namespace Truefrontier\TeamInvites\Actions\Jetstream;
+namespace App\Actions\Jetstream;
 
 use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Jetstream;
