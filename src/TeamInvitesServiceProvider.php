@@ -83,7 +83,7 @@ class TeamInvitesServiceProvider extends ServiceProvider
 	    ], 'actions');
 
 	    $this->publishes([
-		    __DIR__.'/config/team_invites.php' => config_path('team_invites.php'),
+		    __DIR__.'/config/truefrontier_team_invites.php' => config_path('truefrontier_team_invites.php'),
 	    ], 'config');
 
 	    $this->publishes([
