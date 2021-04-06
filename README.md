@@ -7,7 +7,7 @@ Install this package via Composer:
 
 ```composer
 "require": {
-  "truefrontier/team-invites": "dev-master",
+  "truefrontier/team-invites": "dev-main",
 }
 
 "repositories": [
