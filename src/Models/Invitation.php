@@ -2,6 +2,8 @@
 
 namespace Truefrontier\TeamInvites\Models;
 
+use App\Models\User;
+use App\Models\Team;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -23,11 +25,11 @@ class Invitation extends Model
 
     public function user()
     {
-        return $this->belongsTo(config('team_invites.user_modal'));
+        return $this->belongsTo(User::class);
     }
 
     public function team()
     {
-        return $this->belongsTo(config('team_invites.team_modal'));
+        return $this->belongsTo(Team::class);
     }
 }

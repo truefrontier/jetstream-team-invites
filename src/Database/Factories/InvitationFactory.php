@@ -2,6 +2,8 @@
 
 namespace Truefrontier\TeamInvites\Database\Factories;
 
+use App\Models\User;
+use App\Models\Team;
 use Illuminate\Support\Str;
 use Truefrontier\TeamInvites\Models\Invitation;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,8 +25,8 @@ class InvitationFactory extends Factory
     public function definition($user_with_team = null)
     {
         if (!$user_with_team) {
-            $user_with_team = app(config('team_invites.user_modal'))::factory()->create();
-            $team = app(config('team_invites.team_modal'))::factory()->create([
+            $user_with_team = User::factory()->create();
+            $team = Team::factory()->create([
                 'user_id' => $user_with_team->id,
             ]);
 

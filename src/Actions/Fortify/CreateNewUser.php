@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\User;
+use App\Models\Team;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -34,12 +36,12 @@ class CreateNewUser implements CreatesNewUsers
 
         return DB::transaction(function () use ($input) {
             return tap(
-	            app(config('team_invites.user_modal'))::create([
+	            User::create([
                     'name' => $input['name'],
                     'email' => $input['email'],
                     'password' => Hash::make($input['password']),
                 ]),
-                function ($user) use ($input) {
+                function (User $user) use ($input) {
                     if (isset($input['invite'])) {
                         if ($invitation = Invitation::where('code', $input['invite'])->first()) {
                             if ($team = $invitation->team) {
@@ -69,13 +71,13 @@ class CreateNewUser implements CreatesNewUsers
     /**
      * Create a personal team for the user.
      *
-     * @param  $user
+     * @param  User $user
      * @return void
      */
-    protected function createTeam($user)
+    protected function createTeam(User $user)
     {
         $user->ownedTeams()->save(
-	        app(config('team_invites.team_modal'))::forceCreate([
+	        Team::forceCreate([
                 'user_id' => $user->id,
                 'name' => explode(' ', $user->name, 2)[0] . "'s Team",
                 'personal_team' => true,
