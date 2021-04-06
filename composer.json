@@ -1,0 +1,58 @@
+{
+  "name": "truefrontier/team-invites",
+  "description": "Customize Jetstream Team Invitations",
+  "keywords": [
+    "truefrontier",
+    "jetstream",
+    "team-invites"
+  ],
+  "homepage": "https://github.com/truefrontier/team-invites",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Dalton McCleery",
+      "email": "daltonmccleery@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Kevin Kirchner",
+      "email": "kevin@truefrontierapps.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "doctrine/dbal": "^2.9|^3.0",
+    "illuminate/support": "^8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Truefrontier\\TeamInvites\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Truefrontier\\TeamInvites\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Truefrontier\\TeamInvites\\TeamInviteStorageServiceProvider"
+      ],
+      "aliases": {
+        "TeamInvites": "Truefrontier\\TeamInvites\\TeamInviteStorageFacade"
+      }
+    }
+  }
+}
