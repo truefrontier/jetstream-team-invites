@@ -20,12 +20,8 @@ Install this package via Composer:
 
 Publish the config options:
 ```bash
-php artisan vendor:publish --provider="Truefrontier\TeamInvites\TeamInvitesServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Truefrontier\TeamInvites\TeamInvitesServiceProvider"
 ```
-
-## Packages Used
-
-- [Spatie Schemaless Attributes](https://github.com/spatie/laravel-schemaless-attributes)
 
 ## License
 
