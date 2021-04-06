@@ -5,8 +5,17 @@
 
 Install this package via Composer:
 
-```bash
-composer require truefrontier/team-invites
+```composer
+"require": {
+  "truefrontier/team-invites": "dev-master",
+}
+
+"repositories": [
+  {
+    "type":"vcs",
+    "url": "https://github.com/truefrontier/team-invites"
+  }
+]
 ```
 
 Publish the config options:
