@@ -89,10 +89,6 @@ class TeamInvitesServiceProvider extends ServiceProvider
 	    $this->publishes([
 		    __DIR__.'/resources/views' => resource_path('views/vendor/truefrontier/team_invites'),
 	    ], 'views');
-
-	    $this->publishes([
-		    __DIR__.'/resources/js/Components/InviteTeamMemberForm.vue' => resource_path('js/Components'),
-	    ], 'components');
     }
 
     /**
