@@ -48,10 +48,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Truefrontier\\TeamInvites\\TeamInviteServiceProvider"
+        "Truefrontier\\TeamInvites\\TeamInvitesServiceProvider"
       ],
       "aliases": {
-        "TeamInvites": "Truefrontier\\TeamInvites\\TeamInviteFacade"
+        "TeamInvites": "Truefrontier\\TeamInvites\\TeamInvitesFacade"
       }
     }
   }
