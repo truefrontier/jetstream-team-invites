@@ -64,15 +64,31 @@ class TeamInvitesServiceProvider extends ServiceProvider
      */
     private function registerPublishing()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-	            __DIR__ . '/Database/Migrations' => database_path('migrations'),
-            ], 'magento-migrations');
-
-            $this->publishes([
-	            __DIR__ . '/Database/Factories' => database_path('factories'),
-            ], 'magento-factories');
+        if (! $this->app->runningInConsole()) {
+            return;
         }
+
+	    $this->publishes([
+		    __DIR__ . '/Database/Migrations' => database_path('migrations'),
+	    ], 'team-invite-migrations');
+
+	    $this->publishes([
+		    __DIR__ . '/Database/Factories' => database_path('factories'),
+	    ], 'team-invite-factories');
+
+	    $this->publishes([
+		    __DIR__.'/Actions/Fortify/CreateNewUser.php' => app_path('Actions/Fortify/CreateNewUser.php'),
+		    __DIR__.'/Actions/Jetstream/AddTeamMember.php' => app_path('Actions/Jetstream/AddTeamMember'),
+		    __DIR__.'/Actions/Jetstream/InviteTeamMember.php' => app_path('Actions/Jetstream/InviteTeamMember.php'),
+	    ], 'team-invite-actions');
+
+	    $this->publishes([
+		    __DIR__.'/config/team_invites.php' => config_path('team_invites.php'),
+	    ], 'team-invite-config');
+
+	    $this->publishes([
+		    __DIR__.'/resources/views' => resource_path('views/vendor/truefrontier/team_invites'),
+	    ], 'team-invite-views');
     }
 
     /**
