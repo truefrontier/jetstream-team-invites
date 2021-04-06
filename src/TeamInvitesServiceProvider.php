@@ -78,7 +78,7 @@ class TeamInvitesServiceProvider extends ServiceProvider
 
 	    $this->publishes([
 		    __DIR__.'/Actions/Fortify/CreateNewUser.php' => app_path('Actions/Fortify/CreateNewUser.php'),
-		    __DIR__.'/Actions/Jetstream/AddTeamMember.php' => app_path('Actions/Jetstream/AddTeamMember'),
+		    __DIR__.'/Actions/Jetstream/AddTeamMember.php' => app_path('Actions/Jetstream/AddTeamMember.php'),
 		    __DIR__.'/Actions/Jetstream/InviteTeamMember.php' => app_path('Actions/Jetstream/InviteTeamMember.php'),
 	    ], 'actions');
 
