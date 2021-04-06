@@ -1,6 +1,4 @@
-# Laravel - Magento API
-
-A Magento 2 API Object Oriented wrapper for a Laravel application.
+# Laravel Jetstream - Custom Team Invites
 
 
 ## Installation
