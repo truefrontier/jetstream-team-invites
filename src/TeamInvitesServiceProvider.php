@@ -70,25 +70,29 @@ class TeamInvitesServiceProvider extends ServiceProvider
 
 	    $this->publishes([
 		    __DIR__ . '/Database/Migrations' => database_path('migrations'),
-	    ], 'team-invite-migrations');
+	    ], 'migrations');
 
 	    $this->publishes([
 		    __DIR__ . '/Database/Factories' => database_path('factories'),
-	    ], 'team-invite-factories');
+	    ], 'factories');
 
 	    $this->publishes([
 		    __DIR__.'/Actions/Fortify/CreateNewUser.php' => app_path('Actions/Fortify/CreateNewUser.php'),
 		    __DIR__.'/Actions/Jetstream/AddTeamMember.php' => app_path('Actions/Jetstream/AddTeamMember'),
 		    __DIR__.'/Actions/Jetstream/InviteTeamMember.php' => app_path('Actions/Jetstream/InviteTeamMember.php'),
-	    ], 'team-invite-actions');
+	    ], 'actions');
 
 	    $this->publishes([
 		    __DIR__.'/config/team_invites.php' => config_path('team_invites.php'),
-	    ], 'team-invite-config');
+	    ], 'config');
 
 	    $this->publishes([
 		    __DIR__.'/resources/views' => resource_path('views/vendor/truefrontier/team_invites'),
-	    ], 'team-invite-views');
+	    ], 'views');
+
+	    $this->publishes([
+		    __DIR__.'/resources/js/Components/InviteTeamMemberForm.vue' => resource_path('js/Components'),
+	    ], 'components');
     }
 
     /**
