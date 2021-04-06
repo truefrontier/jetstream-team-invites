@@ -60,7 +60,11 @@ class CreateNewUser implements CreatesNewUsers
                                 Auth::login($user);
                             }
                         }
-                    } else {
+
+	                    if (config('invitee_creates_personal_team')) {
+		                    $this->createTeam($user);
+	                    }
+                    } elseif (config('team_owner_creates_personal_team')) {
                         $this->createTeam($user);
                     }
                 },
