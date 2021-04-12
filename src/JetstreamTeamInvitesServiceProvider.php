@@ -91,8 +91,8 @@ class JetstreamTeamInvitesServiceProvider extends ServiceProvider
 	    ], 'views');
 
 	    $this->publishes([
-		    __DIR__.'/resources/js/Components/BannerMessage.vue' => resource_path('js/Components'),
-		    __DIR__.'/resources/js/Pages/Auth/Register.vue' => resource_path('js/Pages/Auth'),
+		    __DIR__.'/resources/js/Components/BannerMessage.vue' => resource_path('js/Components/BannerMessage.vue'),
+		    __DIR__.'/resources/js/Pages/Auth/Register.vue' => resource_path('js/Pages/Auth/Register.vue'),
 	    ], 'vue');
     }
 
