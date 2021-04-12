@@ -5,13 +5,20 @@ namespace Truefrontier\JetstreamTeamInvites\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Validation\ValidationException;
-use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Truefrontier\JetstreamTeamInvites\Models\Invitation;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class JetstreamTeamInvitesController extends Controller
+class JetstreamTeamInvitesController extends BaseController
 {
+	use AuthorizesRequests;
+	use DispatchesJobs;
+	use ValidatesRequests;
 
 	/**
 	 * Accept a team invitation.
