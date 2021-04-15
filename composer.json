@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^7.4|^8.0",
     "doctrine/dbal": "^2.9|^3.0",
     "illuminate/support": "^8.0"
   },
