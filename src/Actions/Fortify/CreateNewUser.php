@@ -61,10 +61,10 @@ class CreateNewUser implements CreatesNewUsers
                             }
                         }
 
-	                    if (config('invitee_creates_personal_team')) {
+	                    if (config('truefrontier_team_invites.invitee_creates_personal_team')) {
 		                    $this->createTeam($user);
 	                    }
-                    } elseif (config('team_owner_creates_personal_team')) {
+                    } elseif (config('truefrontier_team_invites.team_owner_creates_personal_team')) {
                         $this->createTeam($user);
                     }
                 },
