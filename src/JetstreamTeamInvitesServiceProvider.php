@@ -87,7 +87,7 @@ class JetstreamTeamInvitesServiceProvider extends ServiceProvider
 	    ], 'config');
 
 	    $this->publishes([
-		    __DIR__.'/resources/emails' => resource_path('views/vendor/truefrontier/team_invites'),
+		    __DIR__.'/resources/emails' => resource_path('views/emails'),
 	    ], 'views');
 
 	    $this->publishes([
