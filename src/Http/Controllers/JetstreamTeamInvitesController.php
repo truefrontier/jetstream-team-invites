@@ -27,8 +27,11 @@ class JetstreamTeamInvitesController extends BaseController
 	 * @param Invitation $invitation
 	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	public function accept(Request $request, Invitation $invitation)
+	public function accept(Request $request, $invitation)
 	{
+		$invitation = Invitation::firstWhere('code', $invitation);
+		abort_unless($invitation, 403);
+
 		app(AddsTeamMembers::class)->add(
 			$invitation->team->owner,
 			$invitation->team,
@@ -52,8 +55,11 @@ class JetstreamTeamInvitesController extends BaseController
 	 * @param Invitation $invitation
 	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	public function destroy(Request $request, Invitation $invitation)
+	public function destroy(Request $request, $invitation)
 	{
+		$invitation = Invitation::firstWhere('code', $invitation);
+		abort_unless($invitation, 403);
+
 		if (!Gate::forUser($request->user())->check('removeTeamMember', $invitation->team)) {
 			throw new AuthorizationException();
 		}
