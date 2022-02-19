@@ -19,7 +19,7 @@ Install this package via Composer by adding the package and the repository link:
 "repositories": [
   {
     "type":"vcs",
-    "url": "https://github.com/peachysoftware/jetstream-team-invites"
+    "url": "https://github.com/truefrontier/jetstream-team-invites"
   }
 ],
 ```
