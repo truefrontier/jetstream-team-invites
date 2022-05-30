@@ -34,6 +34,11 @@ Publish the config options:
 php artisan vendor:publish --provider="Truefrontier\JetstreamTeamInvites\JetstreamTeamInvitesServiceProvider" --force
 ```
 
+Run the DB migration:
+```bash
+php artisan migrate
+```
+
 Lastly, add the Invitation Trait to your Team and User Model:
 ```php
 use Truefrontier\JetstreamTeamInvites\Traits\HasJetstreamTeamInvites;
@@ -42,6 +47,10 @@ class User
 {
     use HasJetstreamTeamInvites;
 ```
+
+____
+
+Enabling this package disables automatic team creation for new users by default. To enable it, look in the `config/truefrontier_team_invites.php` config file.
 
 ## License
 
