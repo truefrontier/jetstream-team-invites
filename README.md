@@ -37,6 +37,8 @@ Publish the config, the three Jetstream/Fortify actions and the invite email. `-
 php artisan vendor:publish --provider="Truefrontier\JetstreamTeamInvites\JetstreamTeamInvitesServiceProvider" --tag=config --tag=actions --tag=views --force
 ```
 
+To use `Invitation::factory()` in your own tests, also publish `--tag=factories`. It needs your app's `User` and `Team` factories, which Jetstream installs.
+
 Run the DB migration:
 ```bash
 php artisan migrate
