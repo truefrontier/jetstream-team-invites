@@ -9,7 +9,7 @@ Create Your Account
 
 Already have a login?
 
-@component('mail::button', ['url' => route('team-invitations.accept', ['invitation' => $invite])])
+@component('mail::button', ['url' => $acceptUrl])
 Login To Join
 @endcomponent
 
