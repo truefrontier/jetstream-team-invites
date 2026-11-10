@@ -32,7 +32,11 @@
   "autoload": {
     "psr-4": {
       "Truefrontier\\JetstreamTeamInvites\\": "src"
-    }
+    },
+    "exclude-from-classmap": [
+      "src/Actions/",
+      "src/Database/"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
