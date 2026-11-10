@@ -31,6 +31,8 @@ abstract class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
+        $app['config']->set('app.key', 'base64:' . base64_encode(str_repeat('k', 32)));
+        $app['config']->set('auth.providers.users.model', User::class);
         $app['config']->set('fortify.home', '/dashboard');
         // The invite email is published to resources/views/emails in an app.
         $app['config']->set('view.paths', array_merge(

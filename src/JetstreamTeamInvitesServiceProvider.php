@@ -42,6 +42,8 @@ class JetstreamTeamInvitesServiceProvider extends ServiceProvider
     {
         return [
             'namespace' => 'Truefrontier\JetstreamTeamInvites\Http\Controllers',
+            // Same group Jetstream puts its own team-invitation routes in: sessions, cookies, CSRF.
+            'middleware' => config('jetstream.middleware', ['web']),
         ];
     }
 
