@@ -77,7 +77,7 @@ class InviteTeamMember implements InvitesTeamMembers
 			'email' => [
 				'required',
 				'email',
-				Rule::unique('team_invitations')->where(function ($query) use ($team) {
+				Rule::unique(Invitation::class)->where(function ($query) use ($team) {
 					$query->where('team_id', $team->id);
 				}),
 			],

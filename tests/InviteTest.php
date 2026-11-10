@@ -59,6 +59,35 @@ class InviteTest extends TestCase
         }
     }
 
+    public function test_the_same_email_cannot_be_invited_to_the_same_team_twice()
+    {
+        Mail::fake();
+        $owner = $this->ownerWithTeam();
+        app(InviteTeamMember::class)->invite($owner, $owner->currentTeam, 'new@example.com', null);
+
+        try {
+            app(InviteTeamMember::class)->invite($owner, $owner->currentTeam, 'new@example.com', null);
+            $this->fail('Expected a ValidationException.');
+        } catch (ValidationException $e) {
+            $this->assertSame(['This user has already been invited to the team.'], $e->errors()['email']);
+            $this->assertSame(1, Invitation::count());
+            Mail::assertSent(InviteMail::class, 1);
+        }
+    }
+
+    public function test_the_same_email_can_be_invited_to_a_different_team()
+    {
+        Mail::fake();
+        $owner = $this->ownerWithTeam();
+        app(InviteTeamMember::class)->invite($owner, $owner->currentTeam, 'new@example.com', null);
+        $other = $this->user('other-owner@example.com');
+        $otherTeam = \App\Models\Team::forceCreate(['user_id' => $other->id, 'name' => 'Other', 'personal_team' => true]);
+
+        app(InviteTeamMember::class)->invite($other, $otherTeam, 'new@example.com', null);
+
+        $this->assertSame(2, Invitation::count());
+    }
+
     public function test_invite_email_names_the_inviter_and_team_and_links_to_register_with_the_code()
     {
         $owner = $this->ownerWithTeam();
