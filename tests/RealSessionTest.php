@@ -27,6 +27,7 @@ class RealSessionTest extends TestCase
     protected function tearDown(): void
     {
         array_map('unlink', glob(config('session.files') . '/*') ?: []);
+        @rmdir(config('session.files'));
         parent::tearDown();
     }
 
