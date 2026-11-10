@@ -5,6 +5,7 @@ namespace Truefrontier\JetstreamTeamInvites\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 use Truefrontier\JetstreamTeamInvites\Models\Invitation;
 use Illuminate\Notifications\Messages\MailMessage;
 
@@ -33,6 +34,10 @@ class InviteTeamMember extends Mailable
     {
         return $this->markdown('emails.teams.invite')
             ->subject($this->invite->user->name . ' invites you to join ' . $this->invite->team->name)
-            ->with(['invite' => $this->invite]);
+            ->with([
+                'invite' => $this->invite,
+                // The accept route is behind the `signed` middleware and looks invitations up by code.
+                'acceptUrl' => URL::signedRoute('team-invitations.accept', ['invitation' => $this->invite->code]),
+            ]);
     }
 }
