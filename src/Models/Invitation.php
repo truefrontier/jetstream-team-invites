@@ -4,6 +4,7 @@ namespace Truefrontier\JetstreamTeamInvites\Models;
 
 use App\Models\User;
 use App\Models\Team;
+use Database\Factories\InvitationFactory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +22,15 @@ class Invitation extends Model
             $invitation->code = $invitation->code ?: Str::random(40);
             return $invitation;
         });
+    }
+
+    /**
+     * Laravel would look for Database\Factories\Truefrontier\JetstreamTeamInvites\Models\InvitationFactory.
+     * The factory is published as Database\Factories\InvitationFactory (--tag=factories).
+     */
+    protected static function newFactory()
+    {
+        return InvitationFactory::new();
     }
 
     public function user()

@@ -36,6 +36,8 @@ Publish the config options:
 php artisan vendor:publish --provider="Truefrontier\JetstreamTeamInvites\JetstreamTeamInvitesServiceProvider" --force
 ```
 
+To use `Invitation::factory()` in your own tests, also publish `--tag=factories`. It needs your app's `User` and `Team` factories, which Jetstream installs.
+
 Run the DB migration:
 ```bash
 php artisan migrate

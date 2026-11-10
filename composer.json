@@ -44,7 +44,10 @@
     "psr-4": {
       "App\\": "workbench/app/",
       "App\\Actions\\": "src/Actions/",
-      "Database\\Factories\\": "src/Database/Factories/",
+      "Database\\Factories\\": [
+        "src/Database/Factories/",
+        "workbench/database/factories/"
+      ],
       "Truefrontier\\JetstreamTeamInvites\\Tests\\": "tests/"
     }
   },
